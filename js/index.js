@@ -1,20 +1,13 @@
-let startTime; // Biến để lưu thời gian bắt đầu
-
-document.getElementById('buyNowButton').addEventListener('click', function () {
-    startTime = Date.now(); // Lưu thời gian khi nhấn nút Mua ngay
-    localStorage.setItem('startTime', startTime); // Lưu vào localStorage
-    window.location.href = 'cart.html'; // Chuyển đến trang giỏ hàng
-});
-
-let isInStock = true; // Giả sử sản phẩm còn hàng, thay đổi thành false nếu hết hàng
-
-// Kiểm tra trạng thái và thay đổi nút "Mua ngay"
+// Khi trang được tải, kiểm tra trạng thái từ localStorage
 window.onload = function() {
     const buyNowButton = document.getElementById("buyNowButton");
     const stockStatus = document.getElementById("stockStatus");
-    
+
+    // Lấy trạng thái từ localStorage
+    const isInStock = localStorage.getItem("stockStatus") === "true";
+
     if (!isInStock) {
-        // Nếu hết hàng, vô hiệu hóa nút "Mua ngay" và thay đổi trạng thái
+        // Nếu sản phẩm hết hàng, vô hiệu hóa nút "Mua ngay" và thay đổi trạng thái
         buyNowButton.disabled = true;
         stockStatus.innerHTML = "Sản phẩm đã hết hàng";
         stockStatus.style.color = "red";  // Hiển thị màu đỏ nếu hết hàng
