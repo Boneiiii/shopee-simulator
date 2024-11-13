@@ -7,16 +7,22 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <div class="container" id="pageContainer">
+    <div class="container">
         <h1>Sản phẩm đặc biệt</h1>
         <div class="product">
             <img src="./img/img-prd.webp" alt="Sản phẩm" style="width: 300px; height: auto; margin-bottom: 20px;">
             <p>POP MART THE MONSTERS FALL IN WILD SERIES-Vinyl Plush Doll Pendant</p>
             <p>Giá: 600.000 VND</p>
+            
+            <!-- Trạng thái sản phẩm còn hàng hay không -->
+            <p id="stockStatus">Sản phẩm còn hàng</p>
+            
+            <!-- Nút Mua ngay sẽ bị vô hiệu hóa nếu hết hàng -->
             <button id="buyNowButton" class="btn">Mua ngay</button>
         </div>
     </div>
-    <script src="./js/script.js"></script>
+    
+    <!-- Liên kết đến file index.js -->
     <script src="./js/index.js"></script>
 </body>
 </html>
