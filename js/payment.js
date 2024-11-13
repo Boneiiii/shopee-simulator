@@ -12,7 +12,7 @@ document.getElementById('paymentButton').addEventListener('click', function () {
         const seconds = Math.floor((timeSpent / 1000) % 60);
         const minutes = Math.floor((timeSpent / 1000 / 60) % 60);
         const milliseconds = timeSpent % 1000; // Mili giây
-
+        localStorage.removeItem ('startTime'); // Lưu vào localStorage
         // Hiển thị thời gian vào phần tử div
         timeInfoDiv.innerHTML = `Thời gian từ khi bạn nhấn "Mua ngay" đến khi thanh toán là: ${minutes} phút ${seconds} giây ${milliseconds} mili giây.`;
     } else {

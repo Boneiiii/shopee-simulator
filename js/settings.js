@@ -18,7 +18,7 @@ window.onload = function() {
 
         // Lưu trạng thái vào localStorage
         localStorage.setItem("stockStatus", stockStatus);
-
+        localStorage.setItem('startTime', Date.now()); // Lưu vào localStorage
         alert("Trạng thái sản phẩm đã được lưu!");
     };
 };
